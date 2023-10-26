@@ -13,6 +13,7 @@ using namespace std;
 #include "Texture.h"
 #include "KeyEventHandler.h"
 #include "Scene.h"
+#include "MapScene.h"
 #include "GameInfo.h"
 
 #define MAX_FRAME_RATE 100

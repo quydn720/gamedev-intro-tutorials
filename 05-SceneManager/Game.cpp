@@ -456,8 +456,11 @@ void CGame::_ParseSection_SCENES(string line)
 	if (tokens.size() < 2) return;
 	int id = atoi(tokens[0].c_str());
 	LPCWSTR path = ToLPCWSTR(tokens[1]);   // file: ASCII format (single-byte char) => Wide Char
+	LPSCENE scene;
 
-	LPSCENE scene = new CPlayScene(id, path);
+	if (id == 0) scene = new MapScene(path);
+	else scene = new CPlayScene(id, path);
+
 	scenes[id] = scene;
 }
 
@@ -520,6 +523,7 @@ void CGame::SwitchScene()
 	CAnimations::GetInstance()->Clear();
 
 	current_scene = next_scene;
+
 	LPSCENE s = scenes[next_scene];
 	this->SetKeyHandler(s->GetKeyEventHandler());
 	s->Load();
