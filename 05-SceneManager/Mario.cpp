@@ -331,6 +331,7 @@ void CMario::SetState(int state)
 		vy = -MARIO_JUMP_DEFLECT_SPEED;
 		vx = 0;
 		ax = 0;
+		CGame::GetInstance()->InitiateSwitchScene(0);
 		break;
 	}
 
