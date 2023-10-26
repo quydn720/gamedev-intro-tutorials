@@ -93,6 +93,7 @@ void CMario::OnCollisionWithGoomba(LPCOLLISIONEVENT e)
 				else
 				{
 					DebugOut(L">>> Mario DIE >>> \n");
+					CGame::GetInstance()->info.heart--;
 					SetState(MARIO_STATE_DIE);
 				}
 			}
@@ -103,6 +104,7 @@ void CMario::OnCollisionWithGoomba(LPCOLLISIONEVENT e)
 void CMario::OnCollisionWithCoin(LPCOLLISIONEVENT e)
 {
 	e->obj->Delete();
+	CGame::GetInstance()->info.coin++;
 	coin++;
 }
 
@@ -251,7 +253,8 @@ void CMario::Render()
 
 	//RenderBoundingBox();
 
-	DebugOutTitle(L"Coins: %d", coin);
+	auto info = CGame::GetInstance()->info;
+	DebugOutTitle(L"Coins: %d | Life: %d | Point: %d", info.coin, info.heart, info.point);
 }
 
 void CMario::SetState(int state)
