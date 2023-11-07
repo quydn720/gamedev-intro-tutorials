@@ -14,6 +14,7 @@ using namespace std;
 #include "KeyEventHandler.h"
 #include "Scene.h"
 #include "MapScene.h"
+#include "WorldMapScene.h"
 #include "GameInfo.h"
 
 #define MAX_FRAME_RATE 100
