@@ -7,6 +7,7 @@ height	240
 # type: 0: intro, 1: play scene 
 [SCENES]
 0	intro.txt
+7	wmap.txt
 1	scene01.txt
 2	scene02.txt
 5	scene0005.txt
@@ -18,3 +19,4 @@ height	240
 10	textures\enemies.png
 20	textures\misc.png
 30	textures\intro.png
+40	textures\wmap.png
