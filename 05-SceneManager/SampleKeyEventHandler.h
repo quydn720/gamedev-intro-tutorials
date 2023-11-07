@@ -31,3 +31,23 @@ public:
 	};
 	void OnKeyUp(int KeyCode) {};
 };
+
+
+class CWorldMapSceneHandler : public CSceneKeyHandler {
+public:
+	CWorldMapSceneHandler(LPSCENE s) :CSceneKeyHandler(s) {};
+	void KeyState(BYTE* states) {};
+	void OnKeyDown(int KeyCode)
+	{
+		switch (KeyCode) {
+		case DIK_S: {
+			CGame::GetInstance()->InitiateSwitchScene(1);
+			break;
+		}
+		default: {
+			break;
+		}
+		}
+	};
+	void OnKeyUp(int KeyCode) {};
+};
