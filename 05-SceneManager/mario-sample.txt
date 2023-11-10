@@ -20,3 +20,4 @@ height	240
 20	textures\misc.png
 30	textures\intro.png
 40	textures\wmap.png
+50	textures\map1-1.png
